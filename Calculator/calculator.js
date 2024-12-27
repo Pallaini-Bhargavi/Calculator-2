@@ -10,6 +10,7 @@ function cleardisplay() {
 function calculate() {
     try {
         let calcExpression = display.value;
+        
         calcExpression = calcExpression.replace(/tan/g, 'Math.tan')
                                        .replace(/sin/g, 'Math.sin')
                                        .replace(/cos/g, 'Math.cos')
@@ -22,6 +23,9 @@ function calculate() {
     }
 }
 
+function deleteLast() {
+    display.value = display.value.slice(0, -1);
+}
 
 function toggleCalculatorTheme() {
     calculator.classList.toggle("dark-theme");
